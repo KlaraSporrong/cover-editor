@@ -1,0 +1,11 @@
+<div class="edit-container" ng-show="state.name.includes('text')">
+	<div class="right-container">
+		<h2>Text Editor</h2>
+		<input type="text" ng-model="text_string" ng-change="updateText(text_string)" placeholder="Cover Title">
+		<h3>Text Color</h3>
+		<div class="settings-wrapper">
+			<span class="color-icon" id="white" ng-click="changeTextColor('white')"></span>
+			<span class="color-icon" id="black" ng-click="changeTextColor('black')"></span>
+		</div>
+	</div>
+</div>
