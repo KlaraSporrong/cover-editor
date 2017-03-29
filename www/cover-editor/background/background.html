@@ -1,33 +1,37 @@
-<div class="edit-container" ng-show="state.name.includes('background')">
-	<div class="right-container">
+<div class="menu-container">
+	<a ui-sref="background"><i class="material-icons icon-btn" id="background">insert_photo</i></a>
+</div>
+<div class="edit-container">
+	<canvas name="Background" id="background-canvas"></canvas>
+	<div class="right-container" ng-show="state.name.includes('background')">
 		<h2>Background Editor</h2>
-		<canvas-file-upload canvas-id="background-canvas"></canvas-file-upload>
+		<input type="file" id="background-file-upload">
 		<h3>Filter</h3>
 		<slider floor="10" ceiling="60" ng-model-low="position.minAge" ng-model-high="position.maxAge"></slider>
 		<md-slider-container>
 			<span class="md-body-1">Contrast</span>
-			<md-slider flex ng-model="filter.contrast" min="0" max="200" aria-label="contrast" id="contrast-slider" class="md-primary">
+			<md-slider flex ng-model="bc.filter.contrast" min="0" max="200" aria-label="contrast" id="contrast-slider" class="md-primary">
 			</md-slider>
 			<md-input-container>
-				<input flex type="number" ng-model="filter.contrast" aria-label="contrast" aria-controls="contrast-slider">
+				<input flex type="number" ng-model="bc.filter.contrast" aria-label="contrast" aria-controls="contrast-slider">
 			</md-input-container>
 		</md-slider-container>
 		<md-slider-container>
 			<span class="md-body-1">Brightness</span>
-			<md-slider flex ng-model="filter.brightness" min="0" max="200" aria-label="brightness" id="brightness-slider" class="md-primary">
+			<md-slider flex ng-model="bc.filter.brightness" min="0" max="200" aria-label="brightness" id="brightness-slider" class="md-primary">
 			</md-slider>
 			<md-input-container>
-				<input flex type="number" ng-model="filter.brightness" aria-label="brightness" aria-controls="brightness-slider">
+				<input flex type="number" ng-model="bc.filter.brightness" aria-label="brightness" aria-controls="brightness-slider">
 			</md-input-container>
     	</md-slider-container>
     	<md-slider-container>
 			<span class="md-body-1">Saturation</span>
-			<md-slider flex ng-model="filter.saturate" min="0" max="200" aria-label="saturate" id="saturate-slider" class="md-primary">
+			<md-slider flex ng-model="bc.filter.saturate" min="0" max="200" aria-label="saturate" id="saturate-slider" class="md-primary">
 			</md-slider>
 			<md-input-container>
-				<input flex type="number" ng-model="filter.saturate" aria-label="saturate" aria-controls="saturate-slider">
+				<input flex type="number" ng-model="bc.filter.saturate" aria-label="saturate" aria-controls="saturate-slider">
 			</md-input-container>
     	</md-slider-container>
-    	<button ng-click="resetFilter()">Reset Filter</button>
+    	<button ng-click="bc.resetFilter()">Reset Filter</button>
 	</div>
 </div>

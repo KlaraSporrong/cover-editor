@@ -1,9 +1,13 @@
 angular.module('start', [])
-.directive('startEditor', function($state, canvasService) {
+.config(function($stateProvider){
+	$stateProvider
+	.state('start', {
+		url: '/start'
+	})
+})
+.directive('startEditor', function() {
   return {
     restrict: 'E',
-    templateUrl: 'cover-editor/start/start.html',
-    link: function(scope, elem, attr, ctrl) {
-    }
+    templateUrl: 'cover-editor/start/start.html'
   }
 });

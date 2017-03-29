@@ -21,7 +21,8 @@ cover-editor {
 	display: block;
 	margin: auto;
 	background-color: #2d2d2d;
-	height: 640px;
+	/*height: 640px;*/
+	height: 741px;
 	width: 1140px;
 	border-radius: 4px;
 	box-shadow: 4px 4px 15px 4px rgba(0, 0, 0, 0.5);
@@ -29,26 +30,43 @@ cover-editor {
 [ui-sref] {
 	cursor: pointer;
 }
+.edit-container {
+    /*display: inline-block;*/
+    position: absolute;
+	width: 1140px;
+	height: 641px;
+}
 canvas {
-	position: absolute;
-	letter-spacing: -1px;
+	/*position: absolute;*/
+	letter-spacing: -2px;
+	border-bottom-left-radius: 4px;
 }
 canvas#background-canvas {
 	background-color: #000;
+}
+.canvas-placeholder {
+	width: 640px;
+	height: 640px;
+	display: inline-block;
 }
 .editor {
 	display: block;
 }
 .right-container {
-	display: inline-block;
-	width: 380px;
+	position: relative;
+	z-index: 1;
+	width: 480px;
+	height: 100%;
     float: right;
     padding: 0 10px;
+    border-top: 1px solid #000;
 }
-.left-container {
+.menu-container {
 	display: inline-block;
-	width: 100px;
-    float: left;
+    /*position: relative;*/
+    width: 100px;
+    height: 100px;
+	margin-right: -3px;
 }
 .icon-btn {
 	width: 100%;
@@ -57,13 +75,15 @@ canvas#background-canvas {
     font-size: 40px;
     text-align: center;
     vertical-align: middle;
-    border-bottom: 1px solid rgba(255,255,255,0.5);
+    border-right: 1px solid #000;
+    /*border-bottom: 1px solid #000;*/
 }
 .icon-btn:hover {
 	color: rgba(255,255,255,0.5);
 }
 .icon-btn.active {
 	background-color: black;
+	border-bottom: none;
 }
 input[type="text"] {
 	border: none;

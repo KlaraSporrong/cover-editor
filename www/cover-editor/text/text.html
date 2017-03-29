@@ -1,11 +1,15 @@
-<div class="edit-container" ng-show="state.name.includes('text')">
-	<div class="right-container">
+<div class="menu-container">
+	<a ui-sref="text"><i class="material-icons icon-btn" id="text">text_fields</i></a>
+</div>
+<div class="edit-container">
+	<canvas name="Text" id="text-canvas"></canvas>
+	<div class="right-container" ng-show="state.name.includes('text')">
 		<h2>Text Editor</h2>
-		<input type="text" ng-model="text_string" ng-change="updateText(text_string)" placeholder="Cover Title">
+		<input type="text" ng-model="tc.text_string" placeholder="Cover Title">
 		<h3>Text Color</h3>
 		<div class="settings-wrapper">
-			<span class="color-icon" id="white" ng-click="changeTextColor('white')"></span>
-			<span class="color-icon" id="black" ng-click="changeTextColor('black')"></span>
+			<span class="color-icon" id="white" ng-click="tc.text_color = '#FFF'"></span>
+			<span class="color-icon" id="black" ng-click="tc.text_color = '#000'"></span>
 		</div>
 	</div>
 </div>

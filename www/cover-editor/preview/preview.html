@@ -1,6 +1,10 @@
-<div class="edit-container" ng-show="state.name.includes('preview')">
-	<div class="right-container">
+<div class="menu-container">
+	<a ui-sref="preview"><i class="material-icons icon-btn" id="preview">remove_red_eye</i></a>
+</div>
+<div class="edit-container">
+	<canvas id="layer-canvas"></canvas>
+	<div class="right-container" ng-show="state.name.includes('preview')">
 		<h2>Preview</h2>
-		<button ng-click="merge()">Download Cover</button>
+		<button ng-click="pc.merge()">Download Cover</button>
 	</div>
 </div>

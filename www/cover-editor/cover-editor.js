@@ -2,13 +2,8 @@ angular.module('editor', [
 	'start',
 	'background',
 	'text',
-	'preview',
-	'canvas-service',
-	'canvas-file-upload'
+	'preview'
 ])
-.run(function($state){
-	$state.go('start')
-})
 .config(function ($urlRouterProvider, $locationProvider, $stateProvider) {
 
 	// Remove hashbang from URL
@@ -16,19 +11,7 @@ angular.module('editor', [
 		enabled: true,
 		requireBase: false
 	});
-	$stateProvider
-	.state('start', {
-		url: '/start'
-	})
-	.state('background', {
-		url: '/background'
-	})
-	.state('text', {
-		url: '/text'
-	})
-	.state('preview', {
-		url: '/preview'
-	})
+
 	$urlRouterProvider.otherwise('/');
 })
 .directive('coverEditor', function($state, $rootScope) {
@@ -36,13 +19,13 @@ angular.module('editor', [
   	restrict: 'E',
     templateUrl: 'cover-editor/cover-editor.html',
     link: function(scope, elem, attr, ctrl) {
-		window.onbeforeunload = function(e) {
-			console.log(e)
-			return '';
-		}
-
+		// window.onbeforeunload = function(e) {
+		// 	console.log(e)
+		// 	return '';
+		// }
+		$state.go('start')
     	scope.state = $state.current;
-    	scope.canvases = [];
+
         $rootScope.$on('$stateChangeSuccess', function(e, toState) {
         	var fromState = scope.state;
             scope.state = toState;
