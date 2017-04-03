@@ -1,4 +1,4 @@
-angular.module('canvas-scaler',[])
+angular.module('CanvasScaler',[])
 .service('canvasScaler', function(){
 	function scaleCanvas (canvas, canvasViewSize, canvasImageSize) {
         canvas.style.height = canvasViewSize +'px';
@@ -11,7 +11,7 @@ angular.module('canvas-scaler',[])
 
 		if (canvasDpiScaler) {
             screenType = canvasDpiScaler(canvas, ctx);
-            console.log(screenType)
+            console.log('screenType: ',screenType)
         }
         if(CanvasRenderingContext2D) {
             CanvasRenderingContext2D.mozImageSmoothingEnabled = true;

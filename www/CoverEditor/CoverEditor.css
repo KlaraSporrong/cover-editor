@@ -1,0 +1,126 @@
+*, html, body {
+	font-family: 'Helvetica Neue';
+}
+h2, h3, h4, p, a {
+	color: white;
+}
+h1 {
+	text-align: center;
+}
+h3 {
+	margin-top: 30px;
+	margin-bottom: 5px;
+}
+p, a {
+	font-weight: 300;
+}
+a {
+	text-decoration: none;
+}
+
+/* Controls */
+input[type="file"] {
+	color: white;
+}
+input[type="text"] {
+	border: none;
+	border-radius: 4px;
+	font-size: 20px;
+	padding: 10px;
+}
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  font-size: 16px;
+  font-style: italic;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  font-size: 16px;
+  font-style: italic;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  font-size: 16px;
+  font-style: italic;
+}
+:-moz-placeholder { /* Firefox 18- */
+  font-size: 16px;
+  font-style: italic;
+}
+button {
+	font-size: 16px;
+	padding: 10px;
+	border: none;
+	border-radius: 4px;
+	background-color: white;
+	cursor: pointer;
+}
+md-slider-container, md-input-container input[type="number"] {
+	color: white;
+}
+md-slider-container > *:first-child:not(md-slider) {
+    margin-right: 36px !important;
+}
+
+
+/* Menu */
+.menu-container {
+	display: inline-block;
+    width: 100px;
+    height: 100px;
+	margin-right: -3px;
+}
+a[ui-sref] {
+	cursor: pointer;
+}
+.icon-btn {
+	width: 100%;
+	height: 100px;
+    line-height: 100px;
+    font-size: 40px;
+    text-align: center;
+    vertical-align: middle;
+    border-right: 1px solid #000;
+}
+.icon-btn:hover {
+	color: rgba(255,255,255,0.5);
+}
+.icon-btn.active {
+	background-color: black;
+	border-bottom: none;
+}
+
+
+/* Editor */
+cover-editor {
+	display: block;
+	margin: auto;
+	background-color: #2d2d2d;
+	height: 741px;
+	width: 1140px;
+	border-radius: 4px;
+	box-shadow: 4px 4px 15px 4px rgba(0, 0, 0, 0.5);
+}
+.edit-container {
+    position: absolute;
+	width: 1140px;
+	height: 641px;
+}
+.right-container {
+	position: relative;
+	z-index: 1;
+	width: 480px;
+	height: 100%;
+    float: right;
+    padding: 0 10px;
+    border-top: 1px solid #000;
+}
+
+
+/* Canvas */
+canvas {
+	letter-spacing: -2px;
+	border-bottom-left-radius: 4px;
+}
+.canvas-placeholder {
+	width: 640px;
+	height: 640px;
+	display: inline-block;
+}

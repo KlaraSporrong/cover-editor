@@ -3,11 +3,10 @@
 </div>
 <div class="edit-container">
 	<canvas name="Background" id="background-canvas"></canvas>
-	<div class="right-container" ng-show="state.name.includes('background')">
+	<div class="right-container" ng-show="bc.isActive()">
 		<h2>Background Editor</h2>
-		<input type="file" id="background-file-upload">
+		<input type="file" file-change="bc.updateFile($event, files)">
 		<h3>Filter</h3>
-		<slider floor="10" ceiling="60" ng-model-low="position.minAge" ng-model-high="position.maxAge"></slider>
 		<md-slider-container>
 			<span class="md-body-1">Contrast</span>
 			<md-slider flex ng-model="bc.filter.contrast" min="0" max="200" aria-label="contrast" id="contrast-slider" class="md-primary">

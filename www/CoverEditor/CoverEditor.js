@@ -1,23 +1,22 @@
-angular.module('editor', [
-	'start',
-	'background',
-	'text',
-	'preview'
+angular.module('CoverEditor', [
+    'Menu',
+	'Start',
+	'Background',
+	'Text',
+	'Preview'
 ])
-.config(function ($urlRouterProvider, $locationProvider, $stateProvider) {
-
+.config(['$urlRouterProvider', '$locationProvider', '$stateProvider', function ($urlRouterProvider, $locationProvider, $stateProvider) {
 	// Remove hashbang from URL
 	$locationProvider.html5Mode({
 		enabled: true,
 		requireBase: false
 	});
-
 	$urlRouterProvider.otherwise('/');
-})
-.directive('coverEditor', function($state, $rootScope) {
+}])
+.directive('coverEditor', ['$state', function($state) {
   return {
   	restrict: 'E',
-    templateUrl: 'cover-editor/cover-editor.html',
+    templateUrl: 'CoverEditor/CoverEditor.html',
     link: function(scope, elem, attr, ctrl) {
 		// window.onbeforeunload = function(e) {
 		// 	console.log(e)
@@ -25,8 +24,7 @@ angular.module('editor', [
 		// }
 		$state.go('start')
     	scope.state = $state.current;
-
-        $rootScope.$on('$stateChangeSuccess', function(e, toState) {
+        scope.$on('$stateChangeSuccess', function(e, toState) {
         	var fromState = scope.state;
             scope.state = toState;
             setActiveLink(fromState.name, toState.name);
@@ -38,4 +36,4 @@ angular.module('editor', [
         }
     }
   }
-});
+}]);

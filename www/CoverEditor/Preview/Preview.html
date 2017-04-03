@@ -3,8 +3,8 @@
 </div>
 <div class="edit-container">
 	<canvas id="layer-canvas"></canvas>
-	<div class="right-container" ng-show="state.name.includes('preview')">
+	<div class="right-container" ng-show="pc.isActive()">
 		<h2>Preview</h2>
-		<button ng-click="pc.merge()">Download Cover</button>
+		<button ng-click="pc.download()">Download Cover</button>
 	</div>
 </div>

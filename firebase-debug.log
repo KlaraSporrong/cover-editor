@@ -3,35 +3,7 @@
 [debug] CLI Version:  3.2.1
 [debug] Platform:     darwin
 [debug] Node Version: v6.9.1
-[debug] Time:         Mon Mar 27 2017 17:15:45 GMT+0200 (CEST)
-[debug] ----------------------------------------------------------------------
-[debug] 
-[info] Starting Firebase development server...
-[info] 
-[info] Project Directory: /Users/klara/Documents/cover-editor
-[info] Public Directory: www
-[info] 
-[info] Server listening at: http://localhost:5000
-[debug] ----------------------------------------------------------------------
-[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] CLI Version:  3.2.1
-[debug] Platform:     darwin
-[debug] Node Version: v6.9.1
-[debug] Time:         Tue Mar 28 2017 09:31:11 GMT+0200 (CEST)
-[debug] ----------------------------------------------------------------------
-[debug] 
-[info] Starting Firebase development server...
-[info] 
-[info] Project Directory: /Users/klara/Documents/cover-editor
-[info] Public Directory: www
-[info] 
-[info] Server listening at: http://localhost:5000
-[debug] ----------------------------------------------------------------------
-[debug] Command:      /usr/local/bin/node /usr/local/bin/firebase serve
-[debug] CLI Version:  3.2.1
-[debug] Platform:     darwin
-[debug] Node Version: v6.9.1
-[debug] Time:         Tue Mar 28 2017 17:26:44 GMT+0200 (CEST)
+[debug] Time:         Sun Apr 02 2017 12:44:32 GMT+0200 (CEST)
 [debug] ----------------------------------------------------------------------
 [debug] 
 [info] Starting Firebase development server...

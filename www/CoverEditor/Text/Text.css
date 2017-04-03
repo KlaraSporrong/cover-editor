@@ -1,0 +1,23 @@
+.text-restriction {
+    position: absolute;
+    height: 520px;
+    width: 520px;
+    border: 60px solid rgba(0, 0, 0, 0.7);
+}
+.color-icon {
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	border-radius: 10px;
+	margin: 10px 5px;
+	cursor: pointer;
+}
+.color-icon:first-child {
+	margin-left: 0;
+}
+.color-icon#white {
+	background-color: #FFF;
+}
+.color-icon#black {
+	background-color: #000;
+}
