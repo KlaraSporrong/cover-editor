@@ -21,11 +21,10 @@ angular.module('Text', [
     }
   }
 }])
-.controller('textCtrl', ['$scope', 'textService', 'menuService', function($scope, textService, menuService){
+.controller('textCtrl', ['$scope', 'textService', function($scope, textService){
   var tc = this;
   tc.textObj = textService.textObj;
   tc.textColors = textService.textColors;
-  tc.state = menuService.state;
   $scope.$watch(function(){
     return tc.textObj
   },function(text_string){
