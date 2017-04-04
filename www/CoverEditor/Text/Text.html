@@ -1,14 +1,10 @@
-<div class="menu-container">
-	<a ui-sref="text"><i class="material-icons icon-btn" id="text">text_fields</i></a>
-</div>
-<div class="edit-container">
-	<div class="text-restriction" ng-show="state.name.includes('text')"></div>
-	<canvas name="Text" id="text-canvas"></canvas>
-	<div class="right-container" ng-show="state.name.includes('text')">
+<canvas name="Text" id="text-canvas"></canvas>
+<span ng-if="tc.isActive()">
+	<div class="text-restriction"></div>
+	<div class="right-container">
 		<h2>Text Editor</h2>
-		<input type="text" ng-model="tc.text_string" placeholder="Cover Title">
+		<input type="text" ng-model="tc.textObj.textString" placeholder="Cover Title">
 		<h3>Text Color</h3>
-		<span class="color-icon" id="white" ng-click="tc.text_color = '#FFF'"></span>
-		<span class="color-icon" id="black" ng-click="tc.text_color = '#000'"></span>
+		<span ng-repeat="color in tc.textColors" class="color-icon" id="{{color.id}}" ng-style="{'background-color': color.colorCode}" ng-click="tc.textObj.textColor = color.colorCode"></span>
 	</div>
-</div>
+</span>

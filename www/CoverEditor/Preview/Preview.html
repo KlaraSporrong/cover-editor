@@ -1,10 +1,5 @@
-<div class="menu-container">
-	<a ui-sref="preview"><i class="material-icons icon-btn" id="preview">remove_red_eye</i></a>
-</div>
-<div class="edit-container">
-	<canvas id="layer-canvas"></canvas>
-	<div class="right-container" ng-show="pc.isActive()">
-		<h2>Preview</h2>
-		<button ng-click="pc.download()">Download Cover</button>
-	</div>
+<canvas id="layer-canvas"></canvas>
+<div class="right-container" ng-if="pc.isActive()">
+	<h2>Preview</h2>
+	<button ng-click="pc.download()">Download Cover</button>
 </div>

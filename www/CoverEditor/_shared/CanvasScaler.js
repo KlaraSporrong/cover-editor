@@ -1,6 +1,6 @@
 angular.module('CanvasScaler',[])
 .service('canvasScaler', function(){
-	function scaleCanvas (canvas, canvasViewSize, canvasImageSize) {
+	this.scaleCanvas = function(canvas, canvasViewSize, canvasImageSize) {
         canvas.style.height = canvasViewSize +'px';
         canvas.style.width = canvasViewSize +'px';
         canvas.height = canvasViewSize;
@@ -25,7 +25,4 @@ angular.module('CanvasScaler',[])
         }
         return {canvas: canvas, screenType:screenType};
 	}
-    return {
-    	scaleCanvas: scaleCanvas
-    }
 })

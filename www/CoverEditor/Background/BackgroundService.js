@@ -33,10 +33,6 @@ angular.module('BackgroundService', [
 		return (!this.file || !this.canvasObject) ? false : true;
 	}
 
-	// Anonymous functions
-	function clearCanvas(canvas, ctx) {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-    }
 	function convertToDataUrl(file) {
 		var defer = $q.defer();
 		var reader  = new FileReader();
@@ -60,7 +56,7 @@ angular.module('BackgroundService', [
 				var canvas = canvasObject.canvas;
 		        var ctx = canvas.getContext("2d");
 		        var screenType = canvasObject.screenType;
-		        clearCanvas(canvas, ctx);
+		        ctx.clearRect(0, 0, canvas.width, canvas.height);
 		        if(filter) {
 		        	ctx.filter =
 		        		"brightness("+filter.brightness+"%) "+

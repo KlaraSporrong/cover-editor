@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="lib/angular-material/angular-material.css">
 
     <link rel="stylesheet" type="text/css" href="CoverEditor/CoverEditor.css">
+    <link rel="stylesheet" type="text/css" href="CoverEditor/Menu/Menu.css">
     <link rel="stylesheet" type="text/css" href="CoverEditor/Background/Background.css">
     <link rel="stylesheet" type="text/css" href="CoverEditor/Text/Text.css">
     
@@ -20,21 +21,26 @@
     <script src="lib/angular-messages/angular-messages.js"></script>
     <script src="lib/angular-material/angular-material.js"></script>
 
-    <!-- Directives -->
-    <script src="CoverEditor/CoverEditor.js"></script>
-    <script src="CoverEditor/_shared/Menu/Menu.js"></script>
-    <script src="CoverEditor/Start/Start.js"></script>
-    <script src="CoverEditor/Background/Background.js"></script>
-    <script src="CoverEditor/Background/BackgroundService.js"></script>
-    <script src="CoverEditor/Text/Text.js"></script>
-    <script src="CoverEditor/Text/TextService.js"></script>
-    <script src="CoverEditor/Preview/Preview.js"></script>
-    <script src="CoverEditor/Preview/PreviewService.js"></script>
     <!-- Shared -->
     <script src="CoverEditor/_shared/CanvasScaler.js"></script>
     <script src="CoverEditor/_shared/CoverChecker.js"></script>
     <script src="CoverEditor/_shared/FileChange.js"></script>
     <script src="CoverEditor/_shared/canvas-dpi-scaler.js"></script>
+    
+    <!-- Services -->
+    <script src="CoverEditor/Menu/MenuService.js"></script>
+    <script src="CoverEditor/Background/BackgroundService.js"></script>
+    <script src="CoverEditor/Text/TextService.js"></script>
+    <script src="CoverEditor/Preview/PreviewService.js"></script>
+    
+    <!-- Directives -->
+    <script src="CoverEditor/CoverEditor.js"></script>
+    <script src="CoverEditor/Menu/Menu.js"></script>
+    <script src="CoverEditor/Start/Start.js"></script>
+    <script src="CoverEditor/Background/Background.js"></script>
+    <script src="CoverEditor/Text/Text.js"></script>
+    <script src="CoverEditor/Preview/Preview.js"></script>
+    
     
     <!-- Firebase -->
     <script src="lib/firebase/firebase.js"></script>
@@ -45,7 +51,6 @@
   </head>
 
   <body ng-app="app">
-    <!-- <base-directive></base-directive> -->
     <br>
     <cover-editor></cover-editor>
   </body>

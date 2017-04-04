@@ -1,36 +1,31 @@
-<div class="menu-container">
-	<a ui-sref="background"><i class="material-icons icon-btn" id="background">insert_photo</i></a>
-</div>
-<div class="edit-container">
-	<canvas name="Background" id="background-canvas"></canvas>
-	<div class="right-container" ng-show="bc.isActive()">
-		<h2>Background Editor</h2>
-		<input type="file" file-change="bc.updateFile($event, files)">
-		<h3>Filter</h3>
-		<md-slider-container>
-			<span class="md-body-1">Contrast</span>
-			<md-slider flex ng-model="bc.filter.contrast" min="0" max="200" aria-label="contrast" id="contrast-slider" class="md-primary">
-			</md-slider>
-			<md-input-container>
-				<input flex type="number" ng-model="bc.filter.contrast" aria-label="contrast" aria-controls="contrast-slider">
-			</md-input-container>
-		</md-slider-container>
-		<md-slider-container>
-			<span class="md-body-1">Brightness</span>
-			<md-slider flex ng-model="bc.filter.brightness" min="0" max="200" aria-label="brightness" id="brightness-slider" class="md-primary">
-			</md-slider>
-			<md-input-container>
-				<input flex type="number" ng-model="bc.filter.brightness" aria-label="brightness" aria-controls="brightness-slider">
-			</md-input-container>
-    	</md-slider-container>
-    	<md-slider-container>
-			<span class="md-body-1">Saturation</span>
-			<md-slider flex ng-model="bc.filter.saturate" min="0" max="200" aria-label="saturate" id="saturate-slider" class="md-primary">
-			</md-slider>
-			<md-input-container>
-				<input flex type="number" ng-model="bc.filter.saturate" aria-label="saturate" aria-controls="saturate-slider">
-			</md-input-container>
-    	</md-slider-container>
-    	<button ng-click="bc.resetFilter()">Reset Filter</button>
-	</div>
+<canvas name="Background" id="background-canvas"></canvas>
+<div class="right-container" ng-if="bc.isActive()">
+	<h2>Background Editor</h2>
+	<input type="file" file-change="bc.updateFile($event, files)">
+	<h3>Filter</h3>
+	<md-slider-container>
+		<span class="md-body-1">Contrast</span>
+		<md-slider flex ng-model="bc.filter.contrast" min="0" max="200" aria-label="contrast" id="contrast-slider" class="md-primary">
+		</md-slider>
+		<md-input-container>
+			<input flex type="number" ng-model="bc.filter.contrast" aria-label="contrast" aria-controls="contrast-slider">
+		</md-input-container>
+	</md-slider-container>
+	<md-slider-container>
+		<span class="md-body-1">Brightness</span>
+		<md-slider flex ng-model="bc.filter.brightness" min="0" max="200" aria-label="brightness" id="brightness-slider" class="md-primary">
+		</md-slider>
+		<md-input-container>
+			<input flex type="number" ng-model="bc.filter.brightness" aria-label="brightness" aria-controls="brightness-slider">
+		</md-input-container>
+	</md-slider-container>
+	<md-slider-container>
+		<span class="md-body-1">Saturation</span>
+		<md-slider flex ng-model="bc.filter.saturate" min="0" max="200" aria-label="saturate" id="saturate-slider" class="md-primary">
+		</md-slider>
+		<md-input-container>
+			<input flex type="number" ng-model="bc.filter.saturate" aria-label="saturate" aria-controls="saturate-slider">
+		</md-input-container>
+	</md-slider-container>
+	<button ng-click="bc.resetFilter()">Reset Filter</button>
 </div>

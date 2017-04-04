@@ -2,7 +2,7 @@ angular.module('FileChange', [])
 .directive('fileChange', ['$parse', function($parse) {
   return {
     restrict: 'A',
-    link: function ($scope, element, attrs) {
+    link: function (scope, elem, attr, ctrl) {
 
       // Get the function provided in the file-change attribute.
       // Note the attribute has become an angular expression,
@@ -10,20 +10,20 @@ angular.module('FileChange', [])
       // wrapped up in an outer function (attrHandler) - we'll 
       // call the provided event handler inside the handler()
       // function below.
-      var attrHandler = $parse(attrs['fileChange']);
+      var attrHandler = $parse(attr['fileChange']);
 
       // This is a wrapper handler which will be attached to the
       // HTML change event.
       var handler = function (e) {
-        $scope.$apply(function () {
+        scope.$apply(function () {
           // Execute the provided handler in the directive's scope.
           // The files variable will be available for consumption
           // by the event handler.
-          attrHandler($scope, { $event: e, files: e.target.files });
+          attrHandler(scope, { $event: e, files: e.target.files });
         });
       };
       // Attach the handler to the HTML change event 
-      element[0].addEventListener('change', handler, false);
+      elem[0].addEventListener('change', handler, false);
     }
   };
 }])

@@ -5,7 +5,7 @@ angular.module('CoverChecker', [])
 		registeredCanvases.push(canvas);
 	}
 	// Checks all registered canvases,
-	// returns isComplete + complete/incomplete canvases
+	// returns isComplete + complete canvases/null
 	this.checkCover = function() {
 		var canvases = [];
 		var isComplete;
@@ -18,8 +18,20 @@ angular.module('CoverChecker', [])
 				completeCanvases.push(registeredCanvases[i].canvasObject.canvas)
 			}
 		}
-		isComplete = incompleteCanvases.length > 0 ? false : true;
-		canvases = isComplete ? completeCanvases : incompleteCanvases;
-		return {complete:isComplete, canvases: canvases};
+		if(incompleteCanvases.length > 0) {
+			isComplete = false;
+			alertIncompleteCanvases(incompleteCanvases)
+		} else {
+			isComplete = true;
+		}
+		canvases = isComplete ? completeCanvases : null;
+		return {complete:isComplete, canvases:canvases};
+	}
+	function alertIncompleteCanvases(canvases) {
+		var canvasNames = [];
+		for(i in canvases) {
+			canvasNames.push(angular.element(canvases[i]).attr('name'));
+		}
+		alert('['+canvasNames.toString().replace(',', ', ')+'] not complete!')
 	}
 })

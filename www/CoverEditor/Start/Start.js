@@ -5,17 +5,20 @@ angular.module('Start', [])
 		url: '/start'
 	})
 }])
-.directive('startEditor', function() {
+.directive('startEditor', ['menuService', function(menuService) {
   return {
     restrict: 'E',
     templateUrl: 'CoverEditor/Start/Start.html',
     controller: 'startCtrl',
-    controllerAs: 'sc'
+    controllerAs: 'sc',
+    link: function(scope, elem, attr, ctrl) {
+      menuService.register({state: 'start', iconId: 'home'})
+    }
   }
-})
+}])
 .controller('startCtrl', ['$scope', function($scope){
   var sc = this;
   sc.isActive = function() {
-    return $scope.state.name.includes('start');
+    return $scope.state ? $scope.state.name.includes('start') : false;
   }
 }]);

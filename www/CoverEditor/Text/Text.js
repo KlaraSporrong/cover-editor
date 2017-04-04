@@ -8,7 +8,7 @@ angular.module('Text', [
     url: '/text'
   })
 }])
-.directive('textEditor', ['coverChecker', 'textService', function(coverChecker, textService) {
+.directive('textEditor', ['coverChecker', 'textService','menuService', function(coverChecker, textService, menuService) {
   return {
     restrict: 'E',
     templateUrl: 'CoverEditor/Text/Text.html',
@@ -17,21 +17,22 @@ angular.module('Text', [
     link: function(scope, elem, attr, ctrl) {
       textService.initCanvas(elem[0].querySelector('canvas#text-canvas'));
       coverChecker.register({canvasObject:textService.canvasObject, isLayerComplete: function(){return textService.isLayerComplete()}});
+      menuService.register({state: 'text', iconId: 'text_fields'})
     }
   }
 }])
-.controller('textCtrl', ['$scope', 'textService', function($scope, textService){
+.controller('textCtrl', ['$scope', 'textService', 'menuService', function($scope, textService, menuService){
   var tc = this;
-  tc.text_string = textService.text_string;
-  tc.text_color = textService.text_color;
+  tc.textObj = textService.textObj;
+  tc.textColors = textService.textColors;
+  tc.state = menuService.state;
   $scope.$watch(function(){
-    return tc.text_string
+    return tc.textObj
   },function(text_string){
-    textService.updateTextString(tc.text_string);
-  });
-  $scope.$watch(function(){
-    return tc.text_color
-  }, function(text_color){
-    textService.updateTextColor(tc.text_color);
-  })
+    textService.updateText();
+  },true);
+
+  tc.isActive = function() {
+    return $scope.state ? $scope.state.name.includes('text') : false;
+  }
 }]);
